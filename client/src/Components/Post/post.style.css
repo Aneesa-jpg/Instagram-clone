@@ -1,0 +1,20 @@
+.post{
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.icon{
+    margin: 20px 10px;
+    color: red;
+    cursor: pointer;
+}
+
+.icon2{
+    cursor: pointer;
+    color: black;
+    margin: 20px 10px;
+}
+.close{
+    float: right;
+    cursor: pointer;
+}

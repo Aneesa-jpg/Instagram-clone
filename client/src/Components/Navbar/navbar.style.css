@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+
+.brandName{
+    font-family: 'Grand Hotel', cursive;
+    font-size: 2rem;
+}
+.link_{
+    color: white;
+    margin: 0 30px;
+
+}
+
+.link_:link {
+    text-decoration: none;
+  }
+  
+.link_:visited {
+    text-decoration: none;
+  }
+  
+.link_:hover {
+    text-decoration: none;
+    color: grey;
+  
+  }
+  
+.link_:active {
+    text-decoration: none;
+  }
