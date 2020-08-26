@@ -120,11 +120,42 @@ export const Home = () => {
         setUserPosts(newUserPosts);
     })
 }
+
+const deleteComment = (postId,commentId) => {
+    console.log("delete post " + postId);
+      fetch(`/deletePostComment/`, {
+      method: 'delete',
+      headers : {
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer "+ localStorage.getItem("token")
+      },
+      body: JSON.stringify({
+        postId : postId,
+        commentId: commentId
+    })
+    })
+    .then(res => res.json())
+    .then(data =>{
+        const newPost = userPosts.map( post => {
+            if(post._id === data._id){
+                return data;
+            }
+            else{
+                return post;
+            }
+        });
+setUserPosts(newPost);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+  
+}
     return (
         <div className='home'>
         {
             userPosts.map(post => 
-                <Post key={post._id} {...post} like={like} unlike={unLike} makeComment={makeComment} deletePost={deletePost} />
+                <Post key={post._id} {...post} like={like} unlike={unLike} makeComment={makeComment} deletePost={deletePost} deleteComment={deleteComment} />
             )
         }
             

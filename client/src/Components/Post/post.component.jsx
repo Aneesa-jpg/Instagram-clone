@@ -29,7 +29,7 @@ export const Post = (props) => {
                     {
                         props.comments.map(record=>{
                             return(
-                                    <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span> {record.text}</h6>
+                                    <h6 key={record._id} > <span style={{fontWeight:"500"}}>{record.postedBy.name}</span> {record.text} { record.postedBy._id === state._id && <span className="close" onClick={() => {props.deleteComment(props._id,record._id)}}>&times;</span>} </h6> 
                                   )
                                     })
                     }
